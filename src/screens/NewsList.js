@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
-import {CardGrid, PanelHeader, Div, Avatar} from "@vkontakte/vkui";
+import {CardGrid, PanelHeader, Div, Avatar, Button} from "@vkontakte/vkui";
 import NewsItem from "../component/NewsItem";
 
-const NewsList = () => {
+const NewsList = ({setScreen}) => {
     const [news, setNews] = useState([
         {
             author: {
@@ -36,14 +36,11 @@ const NewsList = () => {
     let content = news.map(el => <NewsItem post={el}/>)
     return (
         <>
-            <PanelHeader
-
-            >
-                Фото
-            </PanelHeader>
+            <PanelHeader>Фото</PanelHeader>
             <CardGrid>
                 {content}
             </CardGrid>
+            <Button size='l' onClick={() => setScreen('MapScreen')}>Переход на карту</Button>
         </>
     )
 };

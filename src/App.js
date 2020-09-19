@@ -6,7 +6,7 @@ import NewsList from "./screens/NewsList";
 import MapScreen from "./screens/MapScreens";
 
 function App() {
-    const [screen, setScreen] = useState('MapScreen')
+    const [screen, setScreen] = useState('newsList')
   return (
     <div className="App">
       <View activePanel={screen}>

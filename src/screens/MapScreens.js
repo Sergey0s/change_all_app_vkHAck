@@ -13,7 +13,7 @@ import carantine from '../img/Large w Emoji & Titl.png';
 
 const MapScreen = ({setScreen}) => {
     return (
-        <React.Fragment>
+        <>
             <div style={{position: "relative"}}>
                 <img style={{position: "absolute", top: 300, right: 20}} src={(mood1)} alt={''}/>
                 <img style={{position: "absolute", top: 300, left: 20}} src={(mood2)} alt={''}/>
@@ -27,7 +27,7 @@ const MapScreen = ({setScreen}) => {
                 <img width={'100%'} src={(bottomImg)} alt={''}/>
             </div>
             </div>
-        </React.Fragment>
+        </>
     );
 };
 
