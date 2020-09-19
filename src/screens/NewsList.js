@@ -1,23 +1,39 @@
 import React, {useState} from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
-import {Card, CardGrid, PanelHeader, Div, Avatar} from "@vkontakte/vkui";
+import {CardGrid, PanelHeader, Div, Avatar} from "@vkontakte/vkui";
+import NewsItem from "../component/NewsItem";
 
-const NewsList = (newsList) => {
+const NewsList = () => {
     const [news, setNews] = useState([
         {
             author: {
                 name: 'Михаил',
-                avatar: <Avatar src='../img/Avatar.png' />
+                avatar: <Avatar src={require('../img/Avatar.png')} />
             },
             date: 'Час назад',
             mood: 'спокойное настроение',
             likes: 65,
             comments: 65,
             reposts: 4,
-            views: 7200
+            views: 7200,
+            img: <Avatar mode='image' src={require('../img/Rectangle7.png')}/>
+        },
+        {
+            author: {
+                name: 'Михаил',
+                avatar: <Avatar src={require('../img/Avatar.png')} />
+            },
+            date: 'Час назад',
+            mood: 'спокойное настроение',
+            likes: 65,
+            comments: 65,
+            reposts: 4,
+            views: 7200,
+            img: <Avatar mode='image' src={require('../img/Rectangle7.png')} />
         }
     ])
-    let content = newsList.map(el => )
+
+    let content = news.map(el => <NewsItem post={el}/>)
     return (
         <>
             <PanelHeader
@@ -26,6 +42,7 @@ const NewsList = (newsList) => {
                 Фото
             </PanelHeader>
             <CardGrid>
+                {content}
             </CardGrid>
         </>
     )
