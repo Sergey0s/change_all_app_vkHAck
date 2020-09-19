@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import '@vkontakte/vkui/dist/vkui.css';
+import {Panel, View} from "@vkontakte/vkui";
+import NewsList from "./screens/NewsList";
+import MapScreen from "./screens/MapScreens";
 
 function App() {
+    const [screen, setScreen] = useState('MapScreen')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <View activePanel={screen}>
+          <Panel id='newsList'>
+            <NewsList setScreen={setScreen}/>
+          </Panel>
+          <Panel id='MapScreen'>
+              <MapScreen setScreen={setScreen}/>
+          </Panel>
+      </View>
     </div>
   );
 }
